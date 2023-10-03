@@ -1,0 +1,92 @@
+header{
+    width: 100%;
+    font-size: 17px;
+    height: 60px;
+    padding: 10px;
+    background-color: $navbar-color;
+
+    @extend %flex;
+    justify-content: space-between;
+
+    @include mq (700px){
+        font-size: 20px;
+    }
+
+    .logo{
+        font-size: 25px;
+        @include mq (700px) {
+                font-size: 33px;
+            }
+
+        a{
+            text-decoration: none;
+            color: $main-font-color;
+            transition: 0.3s;
+
+            i{
+                color: $second-font-color;
+            }
+        }
+
+        a:hover {
+            color: $second-font-color
+        }
+    }
+
+    .pages{
+        @extend %flex;
+        list-style: none;
+
+        li{
+            margin-right: 20px;
+        }
+        
+        li a{
+            text-decoration: none;
+            color: $main-font-color;
+            transition: 0.3s;
+        }
+
+        li a:hover {
+            color: $second-font-color;
+        }
+    }
+}
+
+main{
+    min-height: calc(100vh - 60px);
+    position: relative;
+    background-image: url(/imgs/main-backgroundImg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    @include flexCenter;
+
+    .inner-main{
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        padding: 60px 40px;
+        border-radius: 10px;
+        @include flexColumn;
+
+        h1{
+            font-size: 3.2rem;
+            margin-bottom: 30px;
+        }
+
+        .shop-btn{
+            font-size: 23px;
+            padding: 13px;
+            width: 230px;
+            border-radius: 10px;
+            border: 2px solid white;
+            color: $main-font-color;
+            cursor: pointer;
+            transition: 0.3s ;
+            background-color: transparent;
+        }
+
+        .shop-btn:hover{
+            background-color: $second-font-color;
+        }
+    }
+}

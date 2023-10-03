@@ -1,0 +1,40 @@
+$main-font-color: #ffffff;
+$main-background-color: #fff;
+$main-font: 'Mulish', sans-serif;
+$second-font-color: rgb(215, 99, 99);
+$navbar-color: #121212;
+
+%flex{
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexCenter {
+    @extend %flex;
+    justify-content: center;
+}
+
+@mixin flexColumn {
+    @extend %flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+@mixin mq ($size) {
+    @media only screen and (min-width: $size){
+        @content;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $main-font;
+    background-color: $main-background-color;
+    color: $main-font-color;
+}
+
