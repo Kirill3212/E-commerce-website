@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
 
+    <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./dist/css/style.min.css" />
     <title>Food</title>
   </head>
@@ -40,8 +41,38 @@
     <main>
       <div class="inner-main">
         <h1>Healthy And Delicious Food</h1>
-        <button class="shop-btn">Shop Now</button>
+        <a class="shop-btn" href="./pages/shop.html">Meal Now</a>
       </div>
     </main>
+
+    <section class="food-sec">
+      <h1>Our Most Popular <strong>Mexican</strong> Meals</h1>
+      <div class="food-display" id="food-display">
+        <div class="meal">
+          <div class="meal-img">
+            <img src="./imgs/main-backgroundImg.jpg" alt="" />
+          </div>
+          <div class="meal-txt">
+            <h3>Food name</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
+              voluptatem dolores tempora.
+            </p>
+            <button type="button">Buy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2023 Food Company</p>
+      <div>
+        <ul class="social-links">
+          <li><i class="fa-brands fa-facebook"></i></li>
+          <li><i class="fa-brands fa-telegram"></i></li>
+          <li><i class="fa-brands fa-linkedin"></i></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

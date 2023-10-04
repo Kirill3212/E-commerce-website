@@ -1,7 +1,9 @@
 $main-font-color: #ffffff;
 $main-background-color: #fff;
+$main-background-page-color: rgb(26, 26, 26);
 $main-font: 'Mulish', sans-serif;
 $second-font-color: rgb(215, 99, 99);
+$dark-pinkish-color: rgb(182, 82, 82);
 $navbar-color: #121212;
 
 %flex{
@@ -32,9 +34,15 @@ $navbar-color: #121212;
     margin: 0;
 }
 
+html{
+    display: flex;
+    justify-content: center;
+}
+
 body {
     font-family: $main-font;
     background-color: $main-background-color;
     color: $main-font-color;
+    max-width: 1950px;
 }
 
