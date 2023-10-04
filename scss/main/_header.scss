@@ -1,0 +1,55 @@
+header {
+    width: 100%;
+    font-size: 17px;
+    height: 60px;
+    padding: 10px;
+    background-color: $navbar-color;
+
+    @extend %flex;
+    justify-content: space-between;
+
+    @include mq (700px) {
+        font-size: 20px;
+    }
+
+    .logo {
+        font-size: 25px;
+
+        @include mq (700px) {
+            font-size: 33px;
+        }
+
+        a {
+            text-decoration: none;
+            color: $main-font-color;
+            transition: 0.3s;
+
+            i {
+                color: $second-font-color;
+            }
+        }
+
+        a:hover {
+            color: $second-font-color
+        }
+    }
+
+    .pages {
+        @extend %flex;
+        list-style: none;
+
+        li {
+            margin-right: 20px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: $main-font-color;
+            transition: 0.3s;
+        }
+
+        li a:hover {
+            color: $second-font-color;
+        }
+    }
+}

@@ -1,2 +1,10 @@
-@import '_base';
-@import '_main'
+@import './main/base';
+@import './main/header';
+@import './main/footer';
+
+@import './home';
+@import './contact';
+@import './blog';
+@import './about';
+@import '_shop';
+@import '_cart';

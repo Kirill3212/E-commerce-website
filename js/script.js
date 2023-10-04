@@ -2,9 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const products = new Products();
   const ui = new UI();
 
-  products.getData(url).then((food) => {
-    ui.displayFood(food);
-  });
+  products
+    .getData(url)
+    .then((food) => {
+      ui.displayFood(food);
+      Storage.saveFood(food);
+    })
+    .then(() => {
+      ui.getFoodButtons();
+    });
 });
 
 // Request data
@@ -39,7 +45,7 @@ class UI {
           </div>
           <div class="meal-txt">
             <h3>${food.categories[i].strCategory}</h3>
-            <button type="button" class='buy-btn'>Buy</button>
+            <button type="button" class='buy-btn' data-id="${food.categories[i].idCategory}">Buy</button>
           </div>
         </div>
         `;
@@ -49,6 +55,22 @@ class UI {
 
   getFoodButtons() {
     const buttons = [...document.querySelectorAll(".buy-btn")];
-    console.log(buttons);
+    buttons.forEach((button) => {
+      let id = button.dataset.id;
+      button.addEventListener("click", (e) => {
+        console.log("clicked", e.target.dataset);
+        Storage.getFood(id);
+      });
+    });
+  }
+}
+
+class Storage {
+  static saveFood(food) {
+    localStorage.setItem("food", JSON.stringify(food));
+  }
+  static getFood(id) {
+    let food = JSON.parse(localStorage.getItem("food"));
+    console.log(food.categories.find((foodEl) => foodEl === id));
   }
 }

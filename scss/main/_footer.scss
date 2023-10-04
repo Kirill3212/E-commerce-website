@@ -1,0 +1,21 @@
+footer {
+    @include flexCenter;
+    color: #000000;
+    padding: 30px;
+    position: relative;
+
+    .social-links {
+        width: 80px;
+        position: absolute;
+        list-style: none;
+        @include flexCenter;
+        justify-content: space-around;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        li {
+            cursor: pointer;
+        }
+    }
+}
