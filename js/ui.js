@@ -3,8 +3,8 @@ export class UI {
     const displayFood = document.getElementById("food-display");
     let amount = 6;
     let result = "";
-    console.log("Result-2", food);
-    console.log(food.categories[0]);
+    let prices = ["200$", "300$", "150$", "400$", "370$", "575"];
+
     for (let i = 0; i < amount; i++) {
       result += `
       <div class="meal">
@@ -13,6 +13,7 @@ export class UI {
           </div>
           <div class="meal-txt">
             <h3>${food.categories[i].strCategory}</h3>
+            <span>Price: <span class='price'>${prices[i]}</span></span>
             <button type="button" class='buy-btn' data-id="${food.categories[i].idCategory}">Buy</button>
           </div>
         </div>
@@ -27,7 +28,8 @@ export class UI {
       let id = button.dataset.id;
       button.addEventListener("click", (e) => {
         console.log("clicked", e.target.dataset);
-        // Storage.getFood(id);
+        let food = JSON.parse(localStorage.getItem("food"));
+        return food.categories.find((foodEl) => foodEl === id);
       });
     });
   }

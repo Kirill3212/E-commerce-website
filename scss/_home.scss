@@ -90,9 +90,18 @@ main{
             color: black;
 
             h3{
-                margin-top: 30px;
+                margin-top: 15px;
                 font-size: 1.2rem;
                 text-align: center;
+            }
+
+            span{
+                margin-bottom: 5px;
+                color: red;
+
+                span{
+                    color: black;
+                }
             }
 
             button{
